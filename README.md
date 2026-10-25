@@ -65,7 +65,7 @@ The following table benchmarks notable commercial and cloud DAM platforms. Entri
 
 Self-hosted and open-source solutions provide complete data sovereignty, zero per-seat licensing fees, and full infrastructure customization 🛠️. 
 
-Sorted in descending order by **GitHub Stars_Count** ⭐:
+Sorted in descending order by **GitHub_Stars_Count** ⭐:
 
 | Project | GitHub_Stars | License | Primary Stack | Core Description & Capabilities |
 | :--- | :--- | :--- | :--- | :--- |
