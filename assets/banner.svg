@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
+
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#60a5fa" />
+      <stop offset="50%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.02" />
+    </linearGradient>
+
+    <linearGradient id="accentCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <pattern id="gridPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.5" stroke-opacity="0.4" />
+    </pattern>
+
+    <style>
+      @keyframes floatSlow {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-12px) rotate(1.5deg); }
+      }
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.35; transform: scale(1); }
+        50% { opacity: 0.7; transform: scale(1.08); }
+      }
+      @keyframes dashFlow {
+        to { stroke-dashoffset: -40; }
+      }
+      @keyframes orbMove {
+        0%, 100% { transform: translate(0, 0); }
+        50% { transform: translate(30px, -20px); }
+      }
+
+      .floating-card-1 {
+        animation: floatSlow 7s ease-in-out infinite;
+        transform-origin: center;
+      }
+      .floating-card-2 {
+        animation: floatSlow 8.5s ease-in-out infinite reverse;
+        transform-origin: center;
+      }
+      .glowing-orb {
+        animation: pulseGlow 6s ease-in-out infinite alternate;
+        transform-origin: center;
+      }
+      .moving-orb {
+        animation: orbMove 10s ease-in-out infinite alternate;
+      }
+      .stream-line {
+        stroke-dasharray: 6, 8;
+        animation: dashFlow 2.5s linear infinite;
+      }
+      .title-text {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 800;
+        font-size: 46px;
+        letter-spacing: -0.5px;
+      }
+      .subtitle-text {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 400;
+        font-size: 19px;
+        letter-spacing: 0.2px;
+      }
+      .badge-text {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 600;
+        font-size: 12px;
+        letter-spacing: 0.5px;
+      }
+    </style>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1200" height="420" rx="16" fill="url(#bgGrad)" />
+
+  <!-- Animated Ambient Glow Orbs in Background -->
+  <g class="moving-orb">
+    <circle cx="220" cy="110" r="130" fill="#3b82f6" opacity="0.22" filter="url(#glow)" />
+    <circle cx="980" cy="300" r="140" fill="#ec4899" opacity="0.2" filter="url(#glow)" />
+  </g>
+  <circle cx="600" cy="210" r="160" fill="#8b5cf6" opacity="0.18" class="glowing-orb" filter="url(#glow)" />
+
+  <!-- Grid Pattern Overlay -->
+  <rect width="1200" height="420" rx="16" fill="url(#gridPattern)" />
+
+  <!-- Dynamic Connecting Network Streams in Middleground -->
+  <g opacity="0.45">
+    <path d="M 120 340 C 300 240, 480 370, 720 280 S 1080 340, 1150 220" fill="none" stroke="#60a5fa" stroke-width="2" class="stream-line" />
+    <path d="M 80 120 C 320 220, 520 80, 840 180 S 1050 90, 1140 160" fill="none" stroke="#c084fc" stroke-width="1.5" class="stream-line" />
+  </g>
+
+  <!-- Floating Dynamic Tech Cards (Flanking background sides to keep center crystal clear) -->
+  <g class="floating-card-1" opacity="0.85">
+    <!-- Left Card: Asset Pipeline -->
+    <rect x="70" y="240" width="220" height="110" rx="12" fill="url(#cardGrad)" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.3" />
+    <circle cx="95" cy="265" r="7" fill="#38bdf8" />
+    <text x="112" y="270" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI'" font-size="13" font-weight="600">Dynamic Ingestion</text>
+    <rect x="95" y="285" width="170" height="6" rx="3" fill="#334155" />
+    <rect x="95" y="285" width="115" height="6" rx="3" fill="#38bdf8" />
+    <text x="95" y="312" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI'" font-size="11">Images • 4K Video • 3D</text>
+    <text x="95" y="332" fill="#38bdf8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI'" font-size="11" font-weight="600">⚡ Auto-Transcoding</text>
+  </g>
+
+  <g class="floating-card-2" opacity="0.85">
+    <!-- Right Card: Governance & AI -->
+    <rect x="910" y="70" width="220" height="110" rx="12" fill="url(#cardGrad)" stroke="#f472b6" stroke-width="1" stroke-opacity="0.3" />
+    <circle cx="935" cy="95" r="7" fill="#f472b6" />
+    <text x="952" y="100" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI'" font-size="13" font-weight="600">AI Tagging &amp; Rights</text>
+    <rect x="935" y="115" width="170" height="6" rx="3" fill="#334155" />
+    <rect x="935" y="115" width="140" height="6" rx="3" fill="#ec4899" />
+    <text x="935" y="142" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI'" font-size="11">EXIF/IPTC • Facial Recog</text>
+    <text x="935" y="162" fill="#a78bfa" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI'" font-size="11" font-weight="600">🔒 Enterprise Governance</text>
+  </g>
+
+  <!-- FOREGROUND: Pill Badges, Title, Subtitle, and Highlights (Clear & Unobscured) -->
+  <g id="foreground-content">
+    <!-- Top Pill Badge -->
+    <g transform="translate(450, 48)">
+      <rect width="300" height="34" rx="17" fill="#1e293b" stroke="#6366f1" stroke-width="1.2" />
+      <circle cx="20" cy="17" r="5" fill="#10b981" />
+      <text x="36" y="22" fill="#e2e8f0" class="badge-text">CURATED ENTERPRISE &amp; OPEN SOURCE</text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="600" y="140" text-anchor="middle" fill="#f8fafc" class="title-text">
+      Awesome <tspan fill="url(#textGrad)">Digital Asset Management</tspan>
+    </text>
+
+    <!-- Secondary Title / Acronym -->
+    <text x="600" y="190" text-anchor="middle" fill="#94a3b8" class="subtitle-text" font-weight="500">
+      Enterprise DAM Suites • Cloud Media Engines • Self-Hosted Open-Source Repositories
+    </text>
+
+    <!-- Divider Line with Gradient Accent -->
+    <rect x="420" y="215" width="360" height="2" rx="1" fill="url(#accentCyan)" opacity="0.8" />
+
+    <!-- Feature Pillars / Category Badges across Bottom Center -->
+    <g transform="translate(230, 245)">
+      <!-- Pill 1 -->
+      <g transform="translate(0, 0)">
+        <rect width="160" height="38" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" />
+        <text x="80" y="24" text-anchor="middle" fill="#38bdf8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI'" font-size="13" font-weight="600">☁️ SaaS Platforms</text>
+      </g>
+      <!-- Pill 2 -->
+      <g transform="translate(190, 0)">
+        <rect width="170" height="38" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" />
+        <text x="85" y="24" text-anchor="middle" fill="#a78bfa" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI'" font-size="13" font-weight="600">💻 Self-Hosted DAM</text>
+      </g>
+      <!-- Pill 3 -->
+      <g transform="translate(390, 0)">
+        <rect width="165" height="38" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" />
+        <text x="82" y="24" text-anchor="middle" fill="#f472b6" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI'" font-size="13" font-weight="600">⚡ Dynamic CDN</text>
+      </g>
+      <!-- Pill 4 -->
+      <g transform="translate(585, 0)">
+        <rect width="155" height="38" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" />
+        <text x="77" y="24" text-anchor="middle" fill="#34d399" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI'" font-size="13" font-weight="600">🤖 AI Metadata</text>
+      </g>
+    </g>
+
+    <!-- Tagline at bottom -->
+    <text x="600" y="340" text-anchor="middle" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI'" font-size="14" font-weight="500">
+      Organize, Tag, Govern, Transcode, and Distribute Digital Media at Any Scale
+    </text>
+  </g>
+</svg>
