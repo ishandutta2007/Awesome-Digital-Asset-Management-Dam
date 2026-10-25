@@ -134,3 +134,5 @@ If you find this repository helpful, please consider supporting the project:
 - This list is community-curated for informational, architectural, and educational purposes 📚.
 - Trademarks, product logos, and brand assets are the property of their respective owners.
 - Distributed under the [MIT License](https://opensource.org/licenses/MIT) 📄.
+# Awesome-Digital-Asset-Management-Dam
+
